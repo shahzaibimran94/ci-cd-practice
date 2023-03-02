@@ -1,3 +1,4 @@
+const puppeteer = require('puppeteer');
 const { generateText, createElement, validateInput } = require('./util');
 
 const initApp = () => {
