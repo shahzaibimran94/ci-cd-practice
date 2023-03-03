@@ -1,10 +1,11 @@
-const puppeteer = require('puppeteer');
-const { generateText, createElement, validateInput } = require('./util');
+const { generateText, createElement, validateInput, printTitle } = require('./util');
 
 const initApp = () => {
   // Initializes the app, registers the button click listener
   const newUserButton = document.querySelector('#btnAddUser');
   newUserButton.addEventListener('click', addUser);
+  const button = document.querySelector('#btnAPICall');
+  button.addEventListener('click', printTitle);
 };
 
 const addUser = () => {

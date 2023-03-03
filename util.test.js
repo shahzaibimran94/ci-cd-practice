@@ -1,5 +1,5 @@
 const puppeteer = require('puppeteer');
-const { generateText, checkAndGenerate } = require('./util');
+const { generateText, checkAndGenerate, loadTitle } = require('./util');
 
 // Unit Test
 test('should output name and age', () => {
@@ -29,4 +29,11 @@ test('should click around', async () => {
     await page.click('#btnAddUser');
     const finalText = await page.$eval('.user-item', el => el.textContent);
     expect(finalText).toBe('Shahzaib (28 years old)');
+});
+
+// Async code Test
+test('should print an uppercase text', () => {
+    loadTitle().then(title => {
+      expect(title).toBe('DELECTUS AUT AUTEM');
+    });
 });
